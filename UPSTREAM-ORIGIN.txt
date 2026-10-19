@@ -1,0 +1,4 @@
+Upstream: https://raw.githubusercontent.com/matke-84/repository.bingie/main/omega/script.bingie.widgets/script.bingie.widgets-1.0.1.zip
+Original version: 1.0.1
+SHA256 of upstream ZIP: 68ab4f73f48cc733799a0b2f1496d5a893b2b1a1f6b170c3c5b82d064dd1f4b6
+Source files are included for independent editing. Preserve authorship and license notices.
