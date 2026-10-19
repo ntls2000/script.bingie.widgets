@@ -92,7 +92,7 @@ def get_json(url, params=None, retries=0, ratelimit=None, headers=None):
         headers = {} 
     try:
         response = requests.get(url, params=params, headers=headers, timeout=20)
-        if response and response.content and response.status_code == 200:
+        if response is not None and response.content and response.status_code == 200:
             result = json.loads(response.content)
             if "results" in result:
                 result = result["results"]
@@ -106,7 +106,7 @@ def get_json(url, params=None, retries=0, ratelimit=None, headers=None):
             # retry on connection error or http server limiting
             monitor = xbmc.Monitor()
             if not monitor.waitForAbort(2):
-                result = get_json(url, params, headers, retries + 1)
+                result = get_json(url, params=params, retries=retries + 1, ratelimit=ratelimit, headers=headers)
             del monitor
         else:
             log_exception(__name__, exc)
